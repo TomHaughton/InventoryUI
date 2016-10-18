@@ -22,9 +22,12 @@
 		E25E1DA71DB6685600D9DDEB /* TestBow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1D9B1DB6685600D9DDEB /* TestBow.swift */; };
 		E25E1DA81DB6685600D9DDEB /* TestChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1D9C1DB6685600D9DDEB /* TestChest.swift */; };
 		E25E1DA91DB6685600D9DDEB /* TestHelmet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1D9D1DB6685600D9DDEB /* TestHelmet.swift */; };
-		E25E1DAA1DB6685600D9DDEB /* TestWeapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1D9E1DB6685600D9DDEB /* TestWeapon.swift */; };
+		E25E1DAA1DB6685600D9DDEB /* TestSword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1D9E1DB6685600D9DDEB /* TestSword.swift */; };
 		E25E1DAB1DB6685600D9DDEB /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1D9F1DB6685600D9DDEB /* Weapon.swift */; };
 		E25E1DAC1DB6685600D9DDEB /* WeaponType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1DA01DB6685600D9DDEB /* WeaponType.swift */; };
+		E25E1DB31DB679FE00D9DDEB /* TestAxe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1DB21DB679FE00D9DDEB /* TestAxe.swift */; };
+		E25E1DB51DB67A1100D9DDEB /* TestArms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1DB41DB67A1100D9DDEB /* TestArms.swift */; };
+		E25E1DB71DB67A7100D9DDEB /* TestLegs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E1DB61DB67A7100D9DDEB /* TestLegs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +69,12 @@
 		E25E1D9B1DB6685600D9DDEB /* TestBow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBow.swift; sourceTree = "<group>"; };
 		E25E1D9C1DB6685600D9DDEB /* TestChest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestChest.swift; sourceTree = "<group>"; };
 		E25E1D9D1DB6685600D9DDEB /* TestHelmet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelmet.swift; sourceTree = "<group>"; };
-		E25E1D9E1DB6685600D9DDEB /* TestWeapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWeapon.swift; sourceTree = "<group>"; };
+		E25E1D9E1DB6685600D9DDEB /* TestSword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSword.swift; sourceTree = "<group>"; };
 		E25E1D9F1DB6685600D9DDEB /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		E25E1DA01DB6685600D9DDEB /* WeaponType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponType.swift; sourceTree = "<group>"; };
+		E25E1DB21DB679FE00D9DDEB /* TestAxe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAxe.swift; sourceTree = "<group>"; };
+		E25E1DB41DB67A1100D9DDEB /* TestArms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArms.swift; sourceTree = "<group>"; };
+		E25E1DB61DB67A7100D9DDEB /* TestLegs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLegs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,15 +125,12 @@
 		E25E1D621DB6612500D9DDEB /* InventoryWithUI */ = {
 			isa = PBXGroup;
 			children = (
+				E25E1DAF1DB679B900D9DDEB /* Items */,
 				E25E1D951DB6685600D9DDEB /* Armour.swift */,
 				E25E1D961DB6685600D9DDEB /* ArmourOptions.swift */,
 				E25E1D971DB6685600D9DDEB /* Inventory.swift */,
 				E25E1D981DB6685600D9DDEB /* Item.swift */,
 				E25E1D9A1DB6685600D9DDEB /* Player.swift */,
-				E25E1D9B1DB6685600D9DDEB /* TestBow.swift */,
-				E25E1D9C1DB6685600D9DDEB /* TestChest.swift */,
-				E25E1D9D1DB6685600D9DDEB /* TestHelmet.swift */,
-				E25E1D9E1DB6685600D9DDEB /* TestWeapon.swift */,
 				E25E1D9F1DB6685600D9DDEB /* Weapon.swift */,
 				E25E1DA01DB6685600D9DDEB /* WeaponType.swift */,
 				E25E1D631DB6612500D9DDEB /* AppDelegate.swift */,
@@ -156,6 +159,36 @@
 				E25E1D851DB6612600D9DDEB /* Info.plist */,
 			);
 			path = InventoryWithUIUITests;
+			sourceTree = "<group>";
+		};
+		E25E1DAD1DB6799D00D9DDEB /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				E25E1D9B1DB6685600D9DDEB /* TestBow.swift */,
+				E25E1D9E1DB6685600D9DDEB /* TestSword.swift */,
+				E25E1DB21DB679FE00D9DDEB /* TestAxe.swift */,
+			);
+			name = Weapons;
+			sourceTree = "<group>";
+		};
+		E25E1DAF1DB679B900D9DDEB /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				E25E1DB11DB679D700D9DDEB /* Armour */,
+				E25E1DAD1DB6799D00D9DDEB /* Weapons */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		E25E1DB11DB679D700D9DDEB /* Armour */ = {
+			isa = PBXGroup;
+			children = (
+				E25E1D9C1DB6685600D9DDEB /* TestChest.swift */,
+				E25E1D9D1DB6685600D9DDEB /* TestHelmet.swift */,
+				E25E1DB41DB67A1100D9DDEB /* TestArms.swift */,
+				E25E1DB61DB67A7100D9DDEB /* TestLegs.swift */,
+			);
+			name = Armour;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +259,7 @@
 				TargetAttributes = {
 					E25E1D5F1DB6612500D9DDEB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = J26AU2T6ZN;
 					};
 					E25E1D731DB6612500D9DDEB = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -293,12 +327,15 @@
 				E25E1D661DB6612500D9DDEB /* ViewController.swift in Sources */,
 				E25E1DA31DB6685600D9DDEB /* Inventory.swift in Sources */,
 				E25E1DAB1DB6685600D9DDEB /* Weapon.swift in Sources */,
+				E25E1DB71DB67A7100D9DDEB /* TestLegs.swift in Sources */,
+				E25E1DB31DB679FE00D9DDEB /* TestAxe.swift in Sources */,
 				E25E1DA91DB6685600D9DDEB /* TestHelmet.swift in Sources */,
-				E25E1DAA1DB6685600D9DDEB /* TestWeapon.swift in Sources */,
+				E25E1DAA1DB6685600D9DDEB /* TestSword.swift in Sources */,
 				E25E1DA61DB6685600D9DDEB /* Player.swift in Sources */,
 				E25E1D641DB6612500D9DDEB /* AppDelegate.swift in Sources */,
 				E25E1DAC1DB6685600D9DDEB /* WeaponType.swift in Sources */,
 				E25E1DA41DB6685600D9DDEB /* Item.swift in Sources */,
+				E25E1DB51DB67A1100D9DDEB /* TestArms.swift in Sources */,
 				E25E1DA81DB6685600D9DDEB /* TestChest.swift in Sources */,
 				E25E1DA71DB6685600D9DDEB /* TestBow.swift in Sources */,
 				E25E1DA11DB6685600D9DDEB /* Armour.swift in Sources */,
@@ -445,10 +482,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = InventoryWithUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tom.InventoryWithUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -456,10 +497,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = InventoryWithUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tom.InventoryWithUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

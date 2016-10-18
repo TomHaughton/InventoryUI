@@ -2,7 +2,7 @@ class Player {
     var health: Int
     var defense: Int
     var attack: Int
-    var inventory = Inventory(capacity: 100, amountFilled:0)
+    var inventory = Inventory(capacity: 1000, amountFilled:0)
     
     //Armour/Weapon slots
     var head: Armour?
@@ -21,30 +21,35 @@ class Player {
         if let toUnequip = item as? Armour{
             switch toUnequip.armourSlot {
             case ArmourSlot.Head:
-                self.head = nil
-                defense -= toUnequip.defense
-                moveFromPlayerToInv(item)
+                if moveFromPlayerToInv(item){
+                    self.head = nil
+                    defense -= toUnequip.defense
+                }
                 break
             case ArmourSlot.Chest:
-                self.chest = nil
-                defense -= toUnequip.defense
-                moveFromPlayerToInv(item)
+                if moveFromPlayerToInv(item){
+                    self.chest = nil
+                    defense -= toUnequip.defense
+                }
                 break
             case ArmourSlot.Arms:
-                self.arms = nil
-                defense -= toUnequip.defense
-                moveFromPlayerToInv(item)
+                if moveFromPlayerToInv(item){
+                    self.arms = nil
+                    defense -= toUnequip.defense
+                }
                 break
             case ArmourSlot.Legs:
-                self.legs = nil
-                defense -= toUnequip.defense
-                moveFromPlayerToInv(item)
+                if moveFromPlayerToInv(item){
+                    self.legs = nil
+                    defense -= toUnequip.defense
+                }
                 break
             }
         } else if let toUnequip = item as? Weapon{
-            self.weapon = nil
-            attack -= toUnequip.attack
-            moveFromPlayerToInv(item)
+            if moveFromPlayerToInv(item){
+                self.weapon = nil
+                attack -= toUnequip.attack
+            }
         }
     }
     
@@ -106,7 +111,7 @@ class Player {
         }
     }
     
-    func moveFromPlayerToInv(item: Item) {
-        inventory.addItem(item)
+    func moveFromPlayerToInv(item: Item) -> Bool{
+        return inventory.addItem(item)
     }
 }

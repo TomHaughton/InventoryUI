@@ -4,23 +4,23 @@ class ViewController: UIViewController {
     
     var player = Player()
     //Player space
-    let headSpace = CGRectMake(50, 100, 200, 50)
-    let chestSpace = CGRectMake(50, 200, 200, 50)
-    let armSpace = CGRectMake(0, 200, 100, 50)
-    let weaponSpace = CGRectMake(150, 200, 200, 50)
-    let legSpace = CGRectMake(50, 300, 200, 50)
+    let headSpace = CGRectMake(125, 100, 80, 50)
+    let chestSpace = CGRectMake(125, 200, 80, 50)
+    let armSpace = CGRectMake(0, 200, 80, 50)
+    let weaponSpace = CGRectMake(250, 200, 80, 50)
+    let legSpace = CGRectMake(125, 300, 80, 50)
     
     //Inventory space
-    let invSpace = CGRectMake(0, 400, 50, 20)
-    let invSpace1 = CGRectMake(50, 400, 50, 20)
-    let invSpace2 = CGRectMake(100, 400, 50, 20)
-    let invSpace3 = CGRectMake(150, 400, 50, 20)
-    let invSpace4 = CGRectMake(200, 400, 50, 20)
-    let invSpace5 = CGRectMake(0, 420, 50, 20)
-    let invSpace6 = CGRectMake(50, 420, 50, 20)
-    let invSpace7 = CGRectMake(100, 420, 50, 20)
-    let invSpace8 = CGRectMake(150, 420, 50, 20)
-    let invSpace9 = CGRectMake(200, 420, 50, 20)
+    let invSpace = CGRectMake(0, 400, 60, 50)
+    let invSpace1 = CGRectMake(65, 400, 60, 50)
+    let invSpace2 = CGRectMake(130, 400, 60, 50)
+    let invSpace3 = CGRectMake(195, 400, 60, 50)
+    let invSpace4 = CGRectMake(260, 400, 60, 50)
+    let invSpace5 = CGRectMake(0, 460, 60, 50)
+    let invSpace6 = CGRectMake(65, 460, 60, 50)
+    let invSpace7 = CGRectMake(130, 460, 60, 50)
+    let invSpace8 = CGRectMake(195, 460, 60, 50)
+    let invSpace9 = CGRectMake(260, 460, 60, 50)
     
     //Buttons
     var head = UIButton()
@@ -34,8 +34,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         player.equip(TestBow())
         player.equip(TestChest())
+        player.equip(TestLegs())
         player.inventory.addItem(TestHelmet())
-        player.inventory.addItem(TestWeapon())
+        player.inventory.addItem(TestSword())
+        player.inventory.addItem(TestArms())
+        player.inventory.addItem(TestAxe())
         
         head = UIButton(frame: headSpace)
         chest = UIButton(frame: chestSpace)
@@ -43,17 +46,23 @@ class ViewController: UIViewController {
         weapon = UIButton(frame: weaponSpace)
         legs = UIButton(frame: legSpace)
         
-        head.setTitle(player.head?.name != nil ? player.head!.name : "Head", forState: UIControlState.Normal)
-        chest.setTitle(player.chest?.name != nil ? player.chest!.name : "Chest", forState: UIControlState.Normal)
-        arms.setTitle(player.arms?.name != nil ? player.arms?.name : "Arms", forState: UIControlState.Normal)
-        weapon.setTitle(player.weapon?.name != nil ? player.weapon?.name : "Weapon", forState: UIControlState.Normal)
-        legs.setTitle(player.legs?.name != nil ? player.legs?.name : "Legs", forState: UIControlState.Normal)
+        head.setTitle(player.head?.name != nil ? player.head!.name : "None", forState: UIControlState.Normal)
+        chest.setTitle(player.chest?.name != nil ? player.chest!.name : "None", forState: UIControlState.Normal)
+        arms.setTitle(player.arms?.name != nil ? player.arms?.name : "None", forState: UIControlState.Normal)
+        weapon.setTitle(player.weapon?.name != nil ? player.weapon?.name : "None", forState: UIControlState.Normal)
+        legs.setTitle(player.legs?.name != nil ? player.legs?.name : "None", forState: UIControlState.Normal)
         
         head.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         chest.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         arms.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         weapon.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         legs.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        
+        head.backgroundColor = UIColor.brownColor()
+        chest.backgroundColor = UIColor.brownColor()
+        arms.backgroundColor = UIColor.brownColor()
+        weapon.backgroundColor = UIColor.brownColor()
+        legs.backgroundColor = UIColor.brownColor()
         
         head.addTarget(self, action: Selector("headButtonPressed:"), forControlEvents: UIControlEvents.TouchUpInside)
         chest.addTarget(self, action: Selector("chestButtonPressed:"), forControlEvents: UIControlEvents.TouchUpInside)
@@ -93,6 +102,7 @@ class ViewController: UIViewController {
             inventory[index].setTitle(getInvItemName(index) != nil ? getInvItemName(index)! : "inv \(index)", forState: UIControlState.Normal)
             inventory[index].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             inventory[index].addTarget(self, action: Selector("invButtonPressed:"), forControlEvents: UIControlEvents.TouchUpInside)
+            inventory[index].backgroundColor = UIColor.brownColor()
         }
     }
     
@@ -104,11 +114,11 @@ class ViewController: UIViewController {
     }
     
     func updateScreen(){
-        head.setTitle(player.head?.name != nil ? player.head!.name : "Head", forState: UIControlState.Normal)
-        chest.setTitle(player.chest?.name != nil ? player.chest!.name : "Chest", forState: UIControlState.Normal)
-        arms.setTitle(player.arms?.name != nil ? player.arms?.name : "Arms", forState: UIControlState.Normal)
-        weapon.setTitle(player.weapon?.name != nil ? player.weapon?.name : "Weapon", forState: UIControlState.Normal)
-        legs.setTitle(player.legs?.name != nil ? player.legs?.name : "Legs", forState: UIControlState.Normal)
+        head.setTitle(player.head?.name != nil ? player.head!.name : "None", forState: UIControlState.Normal)
+        chest.setTitle(player.chest?.name != nil ? player.chest!.name : "None", forState: UIControlState.Normal)
+        arms.setTitle(player.arms?.name != nil ? player.arms?.name : "None", forState: UIControlState.Normal)
+        weapon.setTitle(player.weapon?.name != nil ? player.weapon?.name : "None", forState: UIControlState.Normal)
+        legs.setTitle(player.legs?.name != nil ? player.legs?.name : "None", forState: UIControlState.Normal)
         
         for index in 0...9 {
             view.addSubview(inventory[index])
@@ -140,8 +150,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func armsButtonPressed(sender: UIButton){
-        if let _ = player.head{
-            player.unequip(player.head!)
+        if let _ = player.arms{
+            player.unequip(player.arms!)
         }
         updateScreen()
     }
