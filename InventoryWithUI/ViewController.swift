@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         inventory[9] = UIButton(frame: invSpace9)
         for index in 0...9 {
             view.addSubview(inventory[index])
-            inventory[index].setTitle(getInvItemName(index) != nil ? getInvItemName(index)! : "inv \(index)", forState: UIControlState.Normal)
+            inventory[index].setTitle(getInvItemName(index) != nil ? getInvItemName(index)! : "", forState: UIControlState.Normal)
             inventory[index].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             inventory[index].addTarget(self, action: Selector("invButtonPressed:"), forControlEvents: UIControlEvents.TouchUpInside)
             inventory[index].backgroundColor = UIColor.brownColor()
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
         
         for index in 0...9 {
             view.addSubview(inventory[index])
-            inventory[index].setTitle(getInvItemName(index) != nil ? getInvItemName(index)! : "inv \(index)", forState: UIControlState.Normal)
+            inventory[index].setTitle(getInvItemName(index) != nil ? getInvItemName(index)! : "", forState: UIControlState.Normal)
         }
 
     }
